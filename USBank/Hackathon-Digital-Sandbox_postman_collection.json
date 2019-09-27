@@ -1,0 +1,1148 @@
+{
+	"info": {
+		"name": "Hackathon Digital Sandbox UAT",
+		"_postman_id": "6d901b1b-ac46-a0e8-8500-b9470680a0f3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"description": "",
+			"item": [
+				{
+					"name": "SB Account  users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/users",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Account  Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/account/types",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"account",
+								"types"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB User Accounts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"LegalParticipantIdentifier\": \"000996202016520455\"\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/user/accounts",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"user",
+								"accounts"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Account Transaction History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OperatingCompanyIdentifier\" : \"642\",\r\n    \"ProductCode\" : \"BCD\",\r\n    \"PrimaryIdentifier\" : \"00000004718240078092035\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-account-transaction-history/v1/account/transactions",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-account-transaction-history",
+								"v1",
+								"account",
+								"transactions"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Account Owner Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"OperatingCompanyIdentifier\" : \"642\",\r\n    \"ProductCode\" : \"BCD\",\r\n    \"PrimaryIdentifier\" : \"00000004718240078092035\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-account-owner-details/v1/account/details",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-account-owner-details",
+								"v1",
+								"account",
+								"details"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Codes",
+			"description": "",
+			"item": [
+				{
+					"name": "SB Get Similar MCC",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/codes/search?desc=airlines",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"codes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "desc",
+									"value": "airlines",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Get All MCCs ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/codes",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"codes"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Get Single MCC Value",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-accountlistbalances/v1/codes/3001",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-accountlistbalances",
+								"v1",
+								"codes",
+								"3001"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transfer Funds",
+			"description": "",
+			"item": [
+				{
+					"name": "SB Transfer Funds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"string\",\r\n  \"channelCode\": \"string\",\r\n  \"transactionTypeCode\": \"string\",\r\n  \"fromOperatingCompanyIdentifier\": \"string\",\r\n  \"fromProductCode\": \"string\",\r\n  \"fromPrimaryAccountIdentifier\": \"string\",\r\n  \"fromAccountType\": \"string\",\r\n  \"toOperatingCompanyIdentifier\": \"string\",\r\n  \"toProductCode\": \"string\",\r\n  \"toPrimaryAccountIdentifier\": \"string\",\r\n  \"requestedTransferAmount\": \"string\",\r\n  \"identityIdentifier\": \"string\",\r\n  \"paymentType\": \"string\",\r\n  \"paymentTypeCode\": \"string\",\r\n  \"effectiveDate\": \"string\",\r\n  \"isRecurring\": \"string\",\r\n  \"selectedDayOfMOnth\": \"string\",\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-funds-transfer/v1/fundstransfer",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-funds-transfer",
+								"v1",
+								"fundstransfer"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Transfer Funds PUT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"string\",\r\n  \"channelCode\": \"string\",\r\n  \"transactionTypeCode\": \"string\",\r\n  \"fromOperatingCompanyIdentifier\": \"string\",\r\n  \"fromProductCode\": \"string\",\r\n  \"fromPrimaryAccountIdentifier\": \"string\",\r\n  \"fromAccountType\": \"string\",\r\n  \"toOperatingCompanyIdentifier\": \"string\",\r\n  \"toProductCode\": \"string\",\r\n  \"toPrimaryAccountIdentifier\": \"string\",\r\n  \"requestedTransferAmount\": \"string\",\r\n  \"identityIdentifier\": \"string\",\r\n  \"paymentType\": \"string\",\r\n  \"paymentTypeCode\": \"string\",\r\n  \"effectiveDate\": \"string\",\r\n  \"isRecurring\": \"string\",\r\n  \"selectedDayOfMOnth\": \"string\",\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-funds-transfer/v1/fundstransfer",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-funds-transfer",
+								"v1",
+								"fundstransfer"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Transfer Funds DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"string\",\r\n  \"channelCode\": \"string\",\r\n  \"transactionTypeCode\": \"string\",\r\n  \"fromOperatingCompanyIdentifier\": \"string\",\r\n  \"fromProductCode\": \"string\",\r\n  \"fromPrimaryAccountIdentifier\": \"string\",\r\n  \"fromAccountType\": \"string\",\r\n  \"toOperatingCompanyIdentifier\": \"string\",\r\n  \"toProductCode\": \"string\",\r\n  \"toPrimaryAccountIdentifier\": \"string\",\r\n  \"requestedTransferAmount\": \"string\",\r\n  \"identityIdentifier\": \"string\",\r\n  \"paymentType\": \"string\",\r\n  \"paymentTypeCode\": \"string\",\r\n  \"effectiveDate\": \"string\",\r\n  \"isRecurring\": \"string\",\r\n  \"selectedDayOfMOnth\": \"string\",\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-funds-transfer/v1/fundstransfer",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-funds-transfer",
+								"v1",
+								"fundstransfer"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"description": "",
+			"item": [
+				{
+					"name": "SB Locations Query",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-locations/v1/StringQuery?application=parasoft&transactionid=afae903d-8946-4f88-a958-4bdbcf0bed6f&output=json&callback=fnName&searchtype=E&stringquery=55123&atmfeatures=adu&branchfeatures=BOP",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"StringQuery"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft",
+									"equals": true
+								},
+								{
+									"key": "transactionid",
+									"value": "afae903d-8946-4f88-a958-4bdbcf0bed6f",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "callback",
+									"value": "fnName",
+									"equals": true
+								},
+								{
+									"key": "searchtype",
+									"value": "E",
+									"equals": true
+								},
+								{
+									"key": "stringquery",
+									"value": "55123",
+									"equals": true
+								},
+								{
+									"key": "atmfeatures",
+									"value": "adu",
+									"equals": true
+								},
+								{
+									"key": "branchfeatures",
+									"value": "BOP",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Locations Address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-locations/v1/Address?application=parasoft&transactionid=7777777d-8946-4f88-a958-4bdbcf0bed6f&output=json&searchtype=E&radius=10&line0=8401 E Belleview Ave&city=denver&statecode=CO&zipcode=80237",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"Address"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft",
+									"equals": true
+								},
+								{
+									"key": "transactionid",
+									"value": "7777777d-8946-4f88-a958-4bdbcf0bed6f",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "searchtype",
+									"value": "E",
+									"equals": true
+								},
+								{
+									"key": "radius",
+									"value": "10",
+									"equals": true
+								},
+								{
+									"key": "line0",
+									"value": "8401 E Belleview Ave",
+									"equals": true
+								},
+								{
+									"key": "city",
+									"value": "denver",
+									"equals": true
+								},
+								{
+									"key": "statecode",
+									"value": "CO",
+									"equals": true
+								},
+								{
+									"key": "zipcode",
+									"value": "80237",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Locations Cross Streets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-locations/v1/Address?application=parasoft&transactionid=5555577d-8946-4f88-a958-4bdbcf0bed6f&output=json&searchtype=E&radius=10&zipcode=80237&crossstreetname=Belleview and DTC",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"Address"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft",
+									"equals": true
+								},
+								{
+									"key": "transactionid",
+									"value": "5555577d-8946-4f88-a958-4bdbcf0bed6f",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "searchtype",
+									"value": "E",
+									"equals": true
+								},
+								{
+									"key": "radius",
+									"value": "10",
+									"equals": true
+								},
+								{
+									"key": "zipcode",
+									"value": "80237",
+									"equals": true
+								},
+								{
+									"key": "crossstreetname",
+									"value": "Belleview and DTC",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Locations Geocode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-locations/v1/Geocode?application=parasoft&transactionid=7777777d-8946-4f88-a958-4bdbcf0bed6f&output=json&maxitems=20&radius=10&longitude=-104.9052963256836&latitude=39.95488357543945",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"Geocode"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft",
+									"equals": true
+								},
+								{
+									"key": "transactionid",
+									"value": "7777777d-8946-4f88-a958-4bdbcf0bed6f",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "maxitems",
+									"value": "20",
+									"equals": true
+								},
+								{
+									"key": "radius",
+									"value": "10",
+									"equals": true
+								},
+								{
+									"key": "longitude",
+									"value": "-104.9052963256836",
+									"equals": true
+								},
+								{
+									"key": "latitude",
+									"value": "39.95488357543945",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rates",
+			"description": "",
+			"item": [
+				{
+					"name": "SB Rates Auto Loan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-rate/v1/GetAutoLoanRates?application=RIB&output=json&branchnumber=1&zipcode=80130&regionid=1&loanamount=24000&loantermmonths=12&loanproduct=NEW",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetAutoLoanRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "branchnumber",
+									"value": "1",
+									"equals": true
+								},
+								{
+									"key": "zipcode",
+									"value": "80130",
+									"equals": true
+								},
+								{
+									"key": "regionid",
+									"value": "1",
+									"equals": true
+								},
+								{
+									"key": "loanamount",
+									"value": "24000",
+									"equals": true
+								},
+								{
+									"key": "loantermmonths",
+									"value": "12",
+									"equals": true
+								},
+								{
+									"key": "loanproduct",
+									"value": "NEW",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Rates GetCurrentDepositRates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-rate/v1/GetCurrentDepositRates?application=RIB&branchnumber=1&CustomerType=CONSUMER&Balance=25000&categoryid=37&LoanAmount=25000&Term=55&output=json",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetCurrentDepositRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB",
+									"equals": true
+								},
+								{
+									"key": "branchnumber",
+									"value": "1",
+									"equals": true
+								},
+								{
+									"key": "CustomerType",
+									"value": "CONSUMER",
+									"equals": true
+								},
+								{
+									"key": "Balance",
+									"value": "25000",
+									"equals": true
+								},
+								{
+									"key": "categoryid",
+									"value": "37",
+									"equals": true
+								},
+								{
+									"key": "LoanAmount",
+									"value": "25000",
+									"equals": true
+								},
+								{
+									"key": "Term",
+									"value": "55",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Rates GetHomeEquityRates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-rate/v1/GetHomeEquityRates?application=myapp&output=json&zipcode=80130&HomeEquityRequestedAmount=15000&MortgageBalance=215000&HomeValue=250000&MinimumLoanAmount=10000&MaximumLoanAmount=20000&MaximumLoanToValuePercent=102&RefinanceDesiredSwitch=true",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetHomeEquityRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "myapp",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								},
+								{
+									"key": "zipcode",
+									"value": "80130",
+									"equals": true
+								},
+								{
+									"key": "HomeEquityRequestedAmount",
+									"value": "15000",
+									"equals": true
+								},
+								{
+									"key": "MortgageBalance",
+									"value": "215000",
+									"equals": true
+								},
+								{
+									"key": "HomeValue",
+									"value": "250000",
+									"equals": true
+								},
+								{
+									"key": "MinimumLoanAmount",
+									"value": "10000",
+									"equals": true
+								},
+								{
+									"key": "MaximumLoanAmount",
+									"value": "20000",
+									"equals": true
+								},
+								{
+									"key": "MaximumLoanToValuePercent",
+									"value": "102",
+									"equals": true
+								},
+								{
+									"key": "RefinanceDesiredSwitch",
+									"value": "true",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Rates GetMortgageRates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-rate/v1/GetMortgageRates?application=myapp&output=json",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetMortgageRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "myapp",
+									"equals": true
+								},
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SB Rates HeartBeat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{api-key-uat}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"personalUserID\": \"M01260604\",\r\n  \"channelCode\": \"OLB_MM\",\r\n  \"transactionTypeCode\": \"REGPMT\",\r\n  \"fromOperatingCompanyIdentifier\": 288,\r\n  \"fromProductCode\": \"DDA\",\r\n  \"fromPrimaryIdentifier\": \"100100511516\",\r\n  \"fromAccountType\": \"SAVINGS\",\r\n  \"toOperatingCompanyIdentifier\": 52,\r\n  \"toProductCode\": \"CCD\",\r\n  \"toPrimaryIdentifier\": 4718240047142264,\r\n  \"requestedTransferAmount\": 200,\r\n  \"identityIdentifier\": \"MOBLBNKG\",\r\n  \"paymentType\": \"otherAmount\",\r\n  \"paymentTypeCode\": \"FUTUREPMTMADETHRUWEB\",\r\n  \"effectiveDate\": \"2018-10-19\",\r\n  \"isRecurring\": \"False\",\r\n  \"selectedDayOfMOnth\": 15,\r\n  \"enhancedAutoPayTypeCode\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{Hackathon-env-uat}}/innovation-rate/v1/HeartBeat?output=json",
+							"protocol": "https",
+							"host": [
+								"{{Hackathon-env-uat}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"HeartBeat"
+							],
+							"query": [
+								{
+									"key": "output",
+									"value": "json",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateAccessToken-test-onPrem",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"token_type\", jsonData.token_type);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZWRnZWNsaTplZGdlY2xpc2VjcmV0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "passcode",
+									"value": "F7SN1n",
+									"type": "text"
+								},
+								{
+									"key": "response_type",
+									"value": "token",
+									"type": "text"
+								},
+								{
+									"key": "ttl",
+									"value": "180000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apimso1t.us.bank-dns.com:9099/oauth/token",
+							"protocol": "https",
+							"host": [
+								"apimso1t",
+								"us",
+								"bank-dns",
+								"com"
+							],
+							"port": "9099",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dc57d19a-6fd4-4a68-80f5-c5bd485c877d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1f5404a4-e6ce-4643-8620-00820578e3f3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
