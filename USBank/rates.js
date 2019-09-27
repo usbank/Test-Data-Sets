@@ -9,21 +9,6 @@ var querystring = require("query-string");
 
 console.log("Running the Rates sample application");
 
-// retrieve server name
-// hard coded LPID value for default
-var lpid = "913996201744144603";
-
-// want to allow the user to pass in a user id (LPID)
-var myArgs = process.argv.slice(2);
-if (myArgs.length >= 1) {
-	if (isNaN(myArgs[0])) {
-		console.log("Involid LPID");
-	} else {
-		lpid = myArgs[0];
-	}
-} else {
-	console.log("Using default LPID");
-}
 
 
 // set the server vvalues
