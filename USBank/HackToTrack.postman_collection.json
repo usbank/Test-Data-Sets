@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "69584474-c64d-4fd1-bb82-9b0bd3ab0d18",
+		"name": "HackToTrack",
+		"description": "Collection ao APIs used for the U.S. Bank HackToTrack hackathon event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gcp-server}}/users",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Get all available LPIDs"
+					},
+					"response": []
+				},
+				{
+					"name": "Account Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gcp-server}}/account/types",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"account",
+								"types"
+							]
+						},
+						"description": "Returns all of the defined US Bank products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get accounts for a user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"LegalParticipantIdentifier\": \"000996202016520455\"\n}\n"
+						},
+						"url": {
+							"raw": "{{gcp-server}}/user/accounts",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"user",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"LegalParticipantIdentifier\": \"913996201744144603\"\n}\n"
+						},
+						"url": {
+							"raw": "{{azure-server}}/account/details",
+							"host": [
+								"{{azure-server}}"
+							],
+							"path": [
+								"account",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OperatingCompanyIdentifier\" : \"642\",\r\n    \"ProductCode\" : \"BCD\",\r\n    \"PrimaryIdentifier\" : \"00000004718240078092035\"\r\n}"
+						},
+						"url": {
+							"raw": "{{gcp-server}}/account/transactions",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"account",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rates",
+			"item": [
+				{
+					"name": "Auto Rates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-rate/v1/GetAutoLoanRates?application=RIB&output=json&zipcode=55408&loanamount=15000&loantermmonths=36",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetAutoLoanRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "zipcode",
+									"value": "55408"
+								},
+								{
+									"key": "loanamount",
+									"value": "15000"
+								},
+								{
+									"key": "loantermmonths",
+									"value": "36"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Home Equity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-rate/v1/GetHomeEquityRates?application=RIB&output=json&zipcode=55408&HomeEquityRequestedAmount=15000&MortgageBalance=180000&HomeValue=280000&MinimumLoanAmount=6000&MaximumLoanAmount=25000&MaximumLoanToValuePercent=102&RefinanceDesiredSwitch=true",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetHomeEquityRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "zipcode",
+									"value": "55408"
+								},
+								{
+									"key": "HomeEquityRequestedAmount",
+									"value": "15000"
+								},
+								{
+									"key": "MortgageBalance",
+									"value": "180000"
+								},
+								{
+									"key": "HomeValue",
+									"value": "280000"
+								},
+								{
+									"key": "MinimumLoanAmount",
+									"value": "6000"
+								},
+								{
+									"key": "MaximumLoanAmount",
+									"value": "25000"
+								},
+								{
+									"key": "MaximumLoanToValuePercent",
+									"value": "102"
+								},
+								{
+									"key": "RefinanceDesiredSwitch",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mortgage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-rate/v1/GetMortgageRates?application=RIB&output=json&zipcode=55408",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetMortgageRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "zipcode",
+									"value": "55408"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Examples for Rates API",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "StringQuery",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-locations/v1/StringQuery?application=parasoft&transactionid={{LocationTransID}}&output=json&callback=fnName&searchtype=E&stringquery=55123&atmfeatures=adu&branchfeatures=BOP\nAUTHORIZATIONS:",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"StringQuery"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft"
+								},
+								{
+									"key": "transactionid",
+									"value": "{{LocationTransID}}"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "callback",
+									"value": "fnName"
+								},
+								{
+									"key": "searchtype",
+									"value": "E"
+								},
+								{
+									"key": "stringquery",
+									"value": "55123"
+								},
+								{
+									"key": "atmfeatures",
+									"value": "adu"
+								},
+								{
+									"key": "branchfeatures",
+									"value": "BOP\nAUTHORIZATIONS:"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-locations/v1//Address?application=parasoft&transactionid={{LocationTransID}}&output=json&searchtype=E&radius=10&line0=8401 E Belleview Ave&city=denver&statecode=CO&zipcode=80237",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"",
+								"Address"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft"
+								},
+								{
+									"key": "transactionid",
+									"value": "{{LocationTransID}}"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "searchtype",
+									"value": "E"
+								},
+								{
+									"key": "radius",
+									"value": "10"
+								},
+								{
+									"key": "line0",
+									"value": "8401 E Belleview Ave"
+								},
+								{
+									"key": "city",
+									"value": "denver"
+								},
+								{
+									"key": "statecode",
+									"value": "CO"
+								},
+								{
+									"key": "zipcode",
+									"value": "80237"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cross Streets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-locations/v1//Address?application=parasoft&transactionid={{LocationTransID}}&output=json&searchtype=E&radius=11&crossstreetname=Belleview and DTC&zipcode=80237",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"",
+								"Address"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft"
+								},
+								{
+									"key": "transactionid",
+									"value": "{{LocationTransID}}"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "searchtype",
+									"value": "E"
+								},
+								{
+									"key": "radius",
+									"value": "11"
+								},
+								{
+									"key": "crossstreetname",
+									"value": "Belleview and DTC"
+								},
+								{
+									"key": "zipcode",
+									"value": "80237"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Geocode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-locations/v1//Geocode?application=parasoft&transactionid={{LocationTransID}}&output=json&searchtype=E&maxitems=20&radius=10&longitude=-104.9052963256836&latitude=39.95488357543945&atmfeatures=ADU|ASS",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-locations",
+								"v1",
+								"",
+								"Geocode"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "parasoft"
+								},
+								{
+									"key": "transactionid",
+									"value": "{{LocationTransID}}"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "searchtype",
+									"value": "E"
+								},
+								{
+									"key": "maxitems",
+									"value": "20"
+								},
+								{
+									"key": "radius",
+									"value": "10"
+								},
+								{
+									"key": "longitude",
+									"value": "-104.9052963256836"
+								},
+								{
+									"key": "latitude",
+									"value": "39.95488357543945"
+								},
+								{
+									"key": "atmfeatures",
+									"value": "ADU|ASS"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Examples for the Location API",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Account-EASE",
+			"item": [
+				{
+					"name": "API Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{AccountGW}}/v1/status",
+							"host": [
+								"{{AccountGW}}"
+							],
+							"path": [
+								"v1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account by accountId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{APIKey}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{AccountGW}}/v1/account/supermob",
+							"host": [
+								"{{AccountGW}}"
+							],
+							"path": [
+								"v1",
+								"account",
+								"supermob"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Example son using the Innovation test Account API",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MerchantCodes",
+			"item": [
+				{
+					"name": "Get all MCC's",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{azure-server}}/codes",
+							"host": [
+								"{{azure-server}}"
+							],
+							"path": [
+								"codes"
+							]
+						},
+						"description": "Request all MCC values"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single MCC value",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gcp-server}}/codes/0763",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"codes",
+								"0763"
+							]
+						},
+						"description": "Request a single MCC value"
+					},
+					"response": []
+				},
+				{
+					"name": "Get similar MCC's",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gcp-server}}/codes/search?desc=airlines",
+							"host": [
+								"{{gcp-server}}"
+							],
+							"path": [
+								"codes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "desc",
+									"value": "airlines"
+								}
+							]
+						},
+						"description": "Request a single MCC value"
+					},
+					"response": []
+				}
+			],
+			"description": "API methods for MCC codes",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
