@@ -23,6 +23,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
 							}
 						],
 						"url": {
@@ -51,6 +56,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
 								"type": "text"
 							}
 						],
@@ -81,6 +91,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
 								"type": "text"
 							}
 						],
@@ -115,6 +130,11 @@
 								"key": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -148,6 +168,11 @@
 								"key": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -613,77 +638,6 @@
 				}
 			],
 			"description": "Examples for the Location API",
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Account-EASE",
-			"item": [
-				{
-					"name": "API Status",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "apiKey",
-								"type": "text",
-								"value": "{{APIKey}}"
-							},
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{AccountGW}}/v1/status",
-							"host": [
-								"{{AccountGW}}"
-							],
-							"path": [
-								"v1",
-								"status"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Account by accountId",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "apiKey",
-								"type": "text",
-								"value": "{{APIKey}}"
-							},
-							{
-								"key": "Accept",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{AccountGW}}/v1/account/supermob",
-							"host": [
-								"{{AccountGW}}"
-							],
-							"path": [
-								"v1",
-								"account",
-								"supermob"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Example son using the Innovation test Account API",
 			"protocolProfileBehavior": {}
 		},
 		{
