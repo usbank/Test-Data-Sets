@@ -31,11 +31,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{gcp-server}}/users",
+							"raw": "{{Gateway}}/innovations/v1/users",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"users"
 							]
 						},
@@ -65,11 +67,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{gcp-server}}/account/types",
+							"raw": "{{Gateway}}/innovations/v1/account/types",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"account",
 								"types"
 							]
@@ -104,11 +108,13 @@
 							"raw": "{\n    \"LegalParticipantIdentifier\": \"000996202016520455\"\n}\n"
 						},
 						"url": {
-							"raw": "{{gcp-server}}/user/accounts",
+							"raw": "{{Gateway}}/innovations/v1/user/accounts",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"user",
 								"accounts"
 							]
@@ -139,14 +145,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"LegalParticipantIdentifier\": \"913996201744144603\"\n}\n"
+							"raw": "{\r\n    \"OperatingCompanyIdentifier\" : \"642\",\r\n    \"ProductCode\" : \"BCD\",\r\n    \"PrimaryIdentifier\" : \"00000004718240078092035\"\r\n}"
 						},
 						"url": {
-							"raw": "{{azure-server}}/account/details",
+							"raw": "{{Gateway}}/innovations/v1/account/details",
 							"host": [
-								"{{azure-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"account",
 								"details"
 							]
@@ -180,11 +188,13 @@
 							"raw": "{\r\n    \"OperatingCompanyIdentifier\" : \"642\",\r\n    \"ProductCode\" : \"BCD\",\r\n    \"PrimaryIdentifier\" : \"00000004718240078092035\"\r\n}"
 						},
 						"url": {
-							"raw": "{{gcp-server}}/account/transactions",
+							"raw": "{{Gateway}}/innovations/v1/account/transactions",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"account",
 								"transactions"
 							]
@@ -657,14 +667,21 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{azure-server}}/codes",
+							"raw": "{{Gateway}}/innovations/v1/codes",
 							"host": [
-								"{{azure-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"codes"
 							]
 						},
@@ -676,13 +693,21 @@
 					"name": "Get a single MCC value",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{gcp-server}}/codes/0763",
+							"raw": "{{Gateway}}/innovations/v1/codes/0763",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"codes",
 								"0763"
 							]
@@ -695,13 +720,21 @@
 					"name": "Get similar MCC's",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{gcp-server}}/codes/search?desc=airlines",
+							"raw": "{{Gateway}}/innovations/v1/codes/search?desc=airlines",
 							"host": [
-								"{{gcp-server}}"
+								"{{Gateway}}"
 							],
 							"path": [
+								"innovations",
+								"v1",
 								"codes",
 								"search"
 							],
