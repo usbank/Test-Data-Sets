@@ -375,6 +375,120 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Certificate of Deposit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-rate/v1/GetCurrentCertificateofDepositRates?application=ICApply&output=json&ProductCode=CDA&SubProductCode=R1&BranchNumber=1&RateEffectiveDate=2018-12-11&zipcode=80130&callback=MyCallBackFunction&OpeningBalanceAmount=25000",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetCurrentCertificateofDepositRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "ICApply"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "ProductCode",
+									"value": "CDA"
+								},
+								{
+									"key": "SubProductCode",
+									"value": "R1"
+								},
+								{
+									"key": "BranchNumber",
+									"value": "1"
+								},
+								{
+									"key": "RateEffectiveDate",
+									"value": "2018-12-11"
+								},
+								{
+									"key": "zipcode",
+									"value": "80130"
+								},
+								{
+									"key": "callback",
+									"value": "MyCallBackFunction"
+								},
+								{
+									"key": "OpeningBalanceAmount",
+									"value": "25000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Deposit Rates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{APIKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Gateway}}/innovation-rate/v1/GetCurrentDepositRates?application=RIB&output=json&branchnumber=1&CustomerType=CONSUMER&Balance=25000&categoryid=7",
+							"host": [
+								"{{Gateway}}"
+							],
+							"path": [
+								"innovation-rate",
+								"v1",
+								"GetCurrentDepositRates"
+							],
+							"query": [
+								{
+									"key": "application",
+									"value": "RIB"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								},
+								{
+									"key": "branchnumber",
+									"value": "1"
+								},
+								{
+									"key": "CustomerType",
+									"value": "CONSUMER"
+								},
+								{
+									"key": "Balance",
+									"value": "25000"
+								},
+								{
+									"key": "categoryid",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "Examples for Rates API",
