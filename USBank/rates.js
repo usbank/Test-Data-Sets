@@ -14,12 +14,13 @@ console.log("Running the Rates sample application");
 // set the server vvalues
 // host options
 var options = {
-    hostname: "uat-publicrestservice.usbank.com",
+    hostname: "https://alpha-api.usbank.com",
     port: 443,
-    path: "/public/RatesRestService_V_6_0/GetAutoLoanRates",
+    path: "/innovation-rate/v1/GetAutoLoanRates",
     method: "GET",
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'apiKey': '3QfMRYTazsAEUF1X6OkKrRjg324m1BKE'
     }
 
 };
