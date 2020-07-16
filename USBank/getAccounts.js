@@ -45,7 +45,7 @@ function callAPI(messageBody) {
 	    headers: {
 	        'Content-Type': 'application/json',
 			'Accept': 'application/json',
-			'apiKey': '3QfMRYTazsAEUF1X6OkKrRjg324m1BKE',
+			'apiKey': YOUR_API_KEY,
 	        'Content-Length': Buffer.byteLength(post_data)
 	    }
 	};
