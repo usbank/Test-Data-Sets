@@ -64,7 +64,7 @@ Please note that the search is based on the card status. This enables you to qui
 
 ### Q. How can I use a virtual card for a purchase?
 
-There are two ways to use a virtual card to make a purchase. Both methods are available in the [Money Movement API](https://github.com/usbank/Test-Data-Sets/Money-Movement.md)
+There are two ways to use a virtual card to make a purchase. Both methods are available in the [Money Movement API](https://github.com/usbank/Test-Data-Sets/blob/Money-Movement.md)
  - */activity/card-purchase* - traditional purchase with a merchant (in person or online). You will need all of the card-related information (card number, expiration date, zip, cvv, etc). This information can be obtained by using the */vcards/{cardID}/details* method.
 
  - */activity/digital-wallet* - through a digital wallet. The virtual card must first be *packaged* for a digital wallet.
@@ -73,7 +73,7 @@ There are two ways to use a virtual card to make a purchase. Both methods are av
 
 The CAAS APIs provide a mechanism for emulating the insertion of a virtual card into a digital wallet: */cards/{cardID}/digital-wallet/google-pay* (Google Pay) or */cards/{cardID}/digital-wallet/apple-pay* (Apple Pay).
 
-However, the card cannot actually be inserted into a real digital wallet because it is simply a test account and therefore cannot really be used for a purchase. However, the [Money Movement API](https://github.com/usbank/Test-Data-Sets/Money-Movement.md) has a method for you to emulate a purchase using a digital wallet.
+However, the card cannot actually be inserted into a real digital wallet because it is simply a test account and therefore cannot really be used for a purchase. However, the [Money Movement API](https://github.com/usbank/Test-Data-Sets/blob/Money-Movement.md) has a method for you to emulate a purchase using a digital wallet.
 
 When you package a virtual card, you will also need to provide a *device ID* and a *wallet ID* which correspond to the device type and your application's specific wallet ID, respectively. Because this is an emulation, you can use any values for these parameters (as long as you meet the required syntax). However, you will need to provide the same *wallet ID* when you make a purchase via the digital wallet.
 
@@ -96,7 +96,7 @@ When you close a card that has been previously used, the amount of unused balanc
 ### Q. How can I look at the purchases for a specific virtual card?
 
 You can find all the transactions for a given virtual card by using the methods available in the
-[Core Banking APIs](https://github.com/usbank/Test-Data-Sets/Core-Banking.md).
+[Core Banking APIs](https://github.com/usbank/Test-Data-Sets/blob/Core-Banking.md).
 
 Every virtual card is associated with a real credit card account. Just use the method */account/{accountID}/trans/{type}* in the Core Banking API where the value for *accountID* is equal to the *cardID*.
 
