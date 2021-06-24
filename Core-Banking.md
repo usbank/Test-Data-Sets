@@ -47,7 +47,7 @@ This method takes a *type* parameter that allows you to retrieve only specific t
 Yes, you can use the */transaction/{transactionID}* method to retrieve the details of a single transaction.
 
 ### Q. Can we create our own transactions?
-Yes, the [Money Movement API](https://github.com/usbank/Test-Data-Sets/blob/Money-Movement.md) emulates a number of different financial transactions. However, transactions are generally limited to particular account types. For example, withdrawals and deposits can only be performed for **direct deposit accounts** (*e.g.* savings and checking).
+Yes, the [Money Movement API](https://github.com/usbank/Test-Data-Sets/blob/master/Money-Movement.md) emulates a number of different financial transactions. However, transactions are generally limited to particular account types. For example, withdrawals and deposits can only be performed for **direct deposit accounts** (*e.g.* savings and checking).
 
 ### Q. What level of details is available for a credit card transaction?
 The transaction data only provides basic information such as the merchant name, transaction amount, date and the transaction category. It does not provide detailed information such as the specific items, quantities purchased, sales tax or shipping. These details, known as *Level 2/3 item details*, are typically only available from the merchant itself.
@@ -56,4 +56,4 @@ The transaction data only provides basic information such as the merchant name, 
 
 Yes, it is listed in the transaction record. When the *category* field has a value of "*mcc*", then the *subcategory* field will contain the specific category code.
 
-The [Reference API](https://github.com/usbank/Test-Data-Sets/blob/Reference.md) documentation provides more details about the meaning of the **merchant category code** and how to use them.
+The [Reference API](https://github.com/usbank/Test-Data-Sets/blob/master/Reference.md) documentation provides more details about the meaning of the **merchant category code** and how to use them.
