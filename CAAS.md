@@ -9,7 +9,7 @@ The company account also has a pool of unassigned virtual cards that you will us
 When you assign a new virtual card, the backend will create a new credit card account for this virtual card. This is the account that will be used for making card purchases. The LOC account serves as the **payment account** (or parent) for the card account because it is actually responsible for it. However, the card transactions will be listed under the card account.
 
 
-![data model](img/caas-workflow.PNG)
+![data model](img/caas-workflow.png)
 
 The company details are available in the */company/{companyID}* method. This will show you pertinent information about the company as well as the general status of the cards (*e.g.* the number of total cards, the number of assigned cards).
 
