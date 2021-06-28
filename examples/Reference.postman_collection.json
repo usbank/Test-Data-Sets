@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "c3f0a7d0-c99d-4e01-898e-1b3d8472021d",
+		"name": "Reference",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{SECRET}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{REF_HOME}}/products",
+					"host": [
+						"{{REF_HOME}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific MCC",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{SECRET}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{REF_HOME}}/code/{{mcc}}",
+					"host": [
+						"{{REF_HOME}}"
+					],
+					"path": [
+						"code",
+						"{{mcc}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Code 3001",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{REF_HOME}}/code/3001",
+							"host": [
+								"{{REF_HOME}}"
+							],
+							"path": [
+								"code",
+								"3001"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jun 2021 15:25:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "bm_sv=210F637AC1D63BBC3C99155FDEBFC11A~ZV5CcQX29MHpckIjeNVcwub9m5hgJGMqJahoMId9+lO+hVz2QKLd7SpXsXW8Wvreq8LTRj7+gwCSfuHaj205Ei0CeLpQWkpioqup6Qst4zgiZhELAso5ER1X1vTTRZia5uShSQ9EY0a16VBVPJrbiUOnBrtSdxFGzWpqsM6tB34=; Domain=.usbank.com; Path=/; Max-Age=3577; HttpOnly"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": {\n        \"mcc\": \"3001\",\n        \"edited_description\": \"AMERICAN AIRLINES\",\n        \"combined_description\": \"AMERICAN AIRLINES\",\n        \"usda_description\": \"AMERICAN AIRLINES\",\n        \"irs_description\": \"Airlines\",\n        \"irs_reportable\": \"Yes\",\n        \"id\": 15\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Search MCC codes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{SECRET}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{REF_HOME}}/codes/search?desc=value",
+					"host": [
+						"{{REF_HOME}}"
+					],
+					"path": [
+						"codes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "desc",
+							"value": "value"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search =  food",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{REF_HOME}}/codes/search?desc=food",
+							"host": [
+								"{{REF_HOME}}"
+							],
+							"path": [
+								"codes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "desc",
+									"value": "food"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "279"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jun 2021 16:33:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "ak_bmsc=0D08B60E9AEB435A92C291506435F4346011953D407E00005F05D6609D6DAB36~plT0wlHfCgZlx3Ioy3C0kxe+jUDGP00790a+C7wskhoSp/XllaB9+btaheCYnEU9NojNN7Fgkj6VA+moAuDx99+9E9HjoX5edNa5UFtOnE2T6rzr7Nch3dmBvr2cd0bJOhc26YSOklt01jOvjA9lR2IvPll318+BdEurBsbpEr1AZpsnHlWWRtAoNN0NYlaEeu7nEAgc0bljRsKNqa53HHEl0KFZeIuCziXUavH0c+vjA=; expires=Fri, 25 Jun 2021 18:33:35 GMT; max-age=7200; path=/; domain=.usbank.com; HttpOnly"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codes\": [\n        {\n            \"mcc\": \"5499\",\n            \"edited_description\": \"Misc. Food Stores – Convenience Stores and Specialty Markets\",\n            \"combined_description\": \"Misc. Food Stores – Convenience Stores and Specialty Markets\",\n            \"usda_description\": \"Misc. Food Stores – Convenience Stores and Specialty Markets\",\n            \"irs_description\": \"Miscellaneous Food Stores - Convenience Stores and Specialty Markets\",\n            \"irs_reportable\": \"No1.6041-3(c)\",\n            \"id\": 765\n        },\n        {\n            \"mcc\": \"5814\",\n            \"edited_description\": \"Fast Food Restaurants\",\n            \"combined_description\": \"Fast Food Restaurants\",\n            \"usda_description\": \"Fast Food Restaurants\",\n            \"irs_description\": \"Fast Food Restaurants\",\n            \"irs_reportable\": \"No1.6041-3(c)\",\n            \"id\": 804\n        },\n        {\n            \"mcc\": \"5995\",\n            \"edited_description\": \"Pet Shops, Pet Foods, and Supplies Stores\",\n            \"combined_description\": \"Pet Shops, Pet Foods, and Supplies Stores\",\n            \"usda_description\": \"Pet Shops, Pet Foods, and Supplies Stores\",\n            \"irs_description\": \"Pet Shops, Pet Food, and Supplies\",\n            \"irs_reportable\": \"No1.6041-3(c)\",\n            \"id\": 850\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all MCC codes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{SECRET}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{REF_HOME}}/codes/all",
+					"host": [
+						"{{REF_HOME}}"
+					],
+					"path": [
+						"codes",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{API_KEY}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

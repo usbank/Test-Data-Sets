@@ -1,0 +1,1517 @@
+{
+	"info": {
+		"_postman_id": "8ff4cf1f-2f3c-4b45-be18-288dbb66e3bf",
+		"name": "CAAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "Retrieve single company",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/company/{{companyID}}",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"company",
+								"{{companyID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve LOC account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/account/{{locAccountID}}/cards/ACTIVE",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"account",
+								"{{locAccountID}}",
+								"cards",
+								"ACTIVE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve all card info",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/company/{{companyID}}/card-info",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"company",
+								"{{companyID}}",
+								"card-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve virtual cards",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyID\": \"{{companyID}}\",\n    \"key\": \"projectID\",\n    \"value\": \"123456\",\n    \"activeOnly\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/company/cards/search",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"company",
+								"cards",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search employee ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyID\": \"{{companyID}}\",\n    \"key\": \"employeeID\",\n    \"value\": \"12121\",\n    \"activeOnly\": \"false\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/company/cards/search",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"company",
+										"cards",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "933"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Jun 2021 22:52:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=FA59541A3CA787FD6E63DEE6E55C1965~ZV5CcQX29MHpckIjeNVcwv+JTYhr1u/vi/oFQ9D8vdQnmNxoTGJQKBu7CMEcKnVfJErcq7Vt9eji0W+jpSf4r3njMpl8WVgRjeO3OlKwPcVkln6AtSySYvz2e/ZMG9Ee43Ue3Wdl366cI3SGs9LCaOWqmr6UKBsfoNg53tnndOI=; Domain=.usbank.com; Path=/; Max-Age=6425; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cards\": [\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"930571044118\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"930571044118\",\n                \"number\": \"5100173200057183\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"937\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-07\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\"\n            },\n            \"comments\": [],\n            \"customAttributes\": [],\n            \"balanceAsOf\": \"2021-06-07\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935329368012\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"935329368012\",\n                \"number\": \"5108756879400551\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"634\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-07\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c0449d95b15800114a3c71\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c0449d95b15800114a3c72\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-07\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"933156766299\",\n            \"status\": \"CLOSED\",\n            \"cardDetails\": {\n                \"cardID\": \"933156766299\",\n                \"number\": \"5048372194134132\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"641\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-08\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c0d60595b15800114a3c77\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c0d60595b15800114a3c78\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-09\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"938320221468\",\n            \"status\": \"CLOSED\",\n            \"cardDetails\": {\n                \"cardID\": \"938320221468\",\n                \"number\": \"5234269148677972\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"401\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-09\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c275e595b15800114a3c97\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c275e595b15800114a3c98\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-10\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935132382895\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"935132382895\",\n                \"number\": \"5440083882074753\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"929\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-13\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c7a475d60ffe0011ab8ae1\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c7a475d60ffe0011ab8ae2\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"930816533261\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"930816533261\",\n                \"number\": \"5119038410083874\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"972\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c904e2d60ffe0011ab8af7\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c904e2d60ffe0011ab8af8\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"930863955827\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"930863955827\",\n                \"number\": \"5007660985428153\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"224\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c906c5d60ffe0011ab8afd\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c906c5d60ffe0011ab8afe\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"934017853252\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"934017853252\",\n                \"number\": \"5048371848215164\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"290\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c906ead60ffe0011ab8b03\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c906ead60ffe0011ab8b04\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"936475209564\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"936475209564\",\n                \"number\": \"5376663640597456\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"145\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c91828d60ffe0011ab8b09\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c91828d60ffe0011ab8b0a\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-15\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935869378950\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"935869378950\",\n                \"number\": \"5168334179727524\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"770\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c91bd3d60ffe0011ab8b11\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c91bd3d60ffe0011ab8b12\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-15\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Search project ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyID\": \"{{companyID}}\",\n    \"key\": \"projectID\",\n    \"value\": \"123456\",\n    \"activeOnly\": \"false\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/company/cards/search",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"company",
+										"cards",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "891"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Jun 2021 22:53:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=FA59541A3CA787FD6E63DEE6E55C1965~ZV5CcQX29MHpckIjeNVcwv+JTYhr1u/vi/oFQ9D8vdQnmNxoTGJQKBu7CMEcKnVfJErcq7Vt9eji0W+jpSf4r3njMpl8WVgRjeO3OlKwPcVVdeDIuP4JDJJ6+3b3CFSlbTwsc+mEFZUCKs/NfFl2cnUAjhz4qZ3bN7F0ttbEtjA=; Domain=.usbank.com; Path=/; Max-Age=6348; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cards\": [\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935329368012\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"935329368012\",\n                \"number\": \"5108756879400551\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"634\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-07\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c0449d95b15800114a3c71\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c0449d95b15800114a3c72\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-07\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"933156766299\",\n            \"status\": \"CLOSED\",\n            \"cardDetails\": {\n                \"cardID\": \"933156766299\",\n                \"number\": \"5048372194134132\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"641\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-08\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c0d60595b15800114a3c77\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c0d60595b15800114a3c78\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-09\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"938320221468\",\n            \"status\": \"CLOSED\",\n            \"cardDetails\": {\n                \"cardID\": \"938320221468\",\n                \"number\": \"5234269148677972\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"401\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-09\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c275e595b15800114a3c97\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c275e595b15800114a3c98\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-10\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935132382895\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"935132382895\",\n                \"number\": \"5440083882074753\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"929\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-13\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c7a475d60ffe0011ab8ae1\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c7a475d60ffe0011ab8ae2\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"930816533261\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"930816533261\",\n                \"number\": \"5119038410083874\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"972\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c904e2d60ffe0011ab8af7\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c904e2d60ffe0011ab8af8\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"930863955827\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"930863955827\",\n                \"number\": \"5007660985428153\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"224\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c906c5d60ffe0011ab8afd\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c906c5d60ffe0011ab8afe\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"934017853252\",\n            \"status\": \"ACTIVE\",\n            \"cardDetails\": {\n                \"cardID\": \"934017853252\",\n                \"number\": \"5048371848215164\",\n                \"cardBrand\": \"visa\",\n                \"cvv\": \"290\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c906ead60ffe0011ab8b03\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c906ead60ffe0011ab8b04\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-14\",\n            \"balances\": {\n                \"lineOfCredit\": 3500,\n                \"availableCredit\": 3500,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"936475209564\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"936475209564\",\n                \"number\": \"5376663640597456\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"145\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c91828d60ffe0011ab8b09\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c91828d60ffe0011ab8b0a\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-15\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        },\n        {\n            \"paymentAccountID\": \"946483858561\",\n            \"accountID\": \"935869378950\",\n            \"status\": \"CANCELLED\",\n            \"cardDetails\": {\n                \"cardID\": \"935869378950\",\n                \"number\": \"5168334179727524\",\n                \"cardBrand\": \"mastercard\",\n                \"cvv\": \"770\",\n                \"zip\": \"79116\",\n                \"expirationDate\": \"2022-06-14\"\n            },\n            \"cardInfo\": {\n                \"firstName\": \"Joe\",\n                \"employeeID\": \"12121\",\n                \"customerID\": \"123456\",\n                \"projectID\": \"123456\",\n                \"lastName\": \"Sakiura\",\n                \"email\": \"cherry@blossom.com\",\n                \"phone\": \"555-345-1213\",\n                \"eventID\": \"AA123\",\n                \"notes\": \"Test Notes\"\n            },\n            \"comments\": [\n                {\n                    \"_id\": \"60c91bd3d60ffe0011ab8b11\",\n                    \"comment\": \"Custom Comment\"\n                }\n            ],\n            \"customAttributes\": [\n                {\n                    \"_id\": \"60c91bd3d60ffe0011ab8b12\",\n                    \"name\": \"Test_Key\",\n                    \"value\": \"Test_Value\"\n                }\n            ],\n            \"balanceAsOf\": \"2021-06-15\",\n            \"balances\": {\n                \"lineOfCredit\": 0,\n                \"availableCredit\": 0,\n                \"currentBalance\": 0,\n                \"principleBalance\": 0\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve virtual card purchases",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyID\": \"{{companyID}}\",\n    \"key\": \"eventID\",\n    \"value\": \"BB123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/company/transactions/search",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"company",
+								"transactions",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Purchases for event BB123",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyID\": \"{{companyID}}\",\n    \"key\": \"eventID\",\n    \"value\": \"BB123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/company/transactions/search",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"company",
+										"transactions",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "373"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Jun 2021 22:58:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=FA59541A3CA787FD6E63DEE6E55C1965~ZV5CcQX29MHpckIjeNVcwv+JTYhr1u/vi/oFQ9D8vdQnmNxoTGJQKBu7CMEcKnVfJErcq7Vt9eji0W+jpSf4r3njMpl8WVgRjeO3OlKwPcUFbXc/zW3WageiMdgnpcEIAdIuzFaTVGwPzc+dSNC3RmJAz96FrHEJV0CbDWuis5s=; Domain=.usbank.com; Path=/; Max-Age=6052; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transactions\": [\n        {\n            \"accountID\": \"938130321594\",\n            \"transactionID\": \"443528489007\",\n            \"cardNumber\": \"5100177698523283\",\n            \"maskedCardNumber\": \"3283\",\n            \"referenceTransactionID\": \"\",\n            \"postedTimestamp\": \"2021-06-09T16:59:38.427Z\",\n            \"transactionTimestamp\": \"2021-06-09T16:59:38.427Z\",\n            \"channel\": \"Card Present\",\n            \"description\": \"Card purchase\",\n            \"memo\": \"\",\n            \"debitCreditMemo\": \"DEBIT\",\n            \"category\": \"MCC\",\n            \"subCategory\": \"1234\",\n            \"reference\": \"Space Systems\",\n            \"status\": \"POSTED\",\n            \"amount\": 49.98,\n            \"payee\": \"\",\n            \"checkNumber\": \"\",\n            \"foreignAmount\": 0,\n            \"foreignCurrency\": \"\",\n            \"transactionType\": \"PURCHASE\"\n        },\n        {\n            \"accountID\": \"938130321594\",\n            \"transactionID\": \"443528489008\",\n            \"cardNumber\": \"5100177698523283\",\n            \"maskedCardNumber\": \"3283\",\n            \"referenceTransactionID\": \"\",\n            \"postedTimestamp\": \"2021-06-09T16:59:59.089Z\",\n            \"transactionTimestamp\": \"2021-06-09T16:59:59.089Z\",\n            \"channel\": \"Card Present\",\n            \"description\": \"Card purchase\",\n            \"memo\": \"\",\n            \"debitCreditMemo\": \"DEBIT\",\n            \"category\": \"MCC\",\n            \"subCategory\": \"1234\",\n            \"reference\": \"Home Security Systems\",\n            \"status\": \"POSTED\",\n            \"amount\": 700.12,\n            \"payee\": \"\",\n            \"checkNumber\": \"\",\n            \"foreignAmount\": 0,\n            \"foreignCurrency\": \"\",\n            \"transactionType\": \"PURCHASE\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "LOC account",
+			"item": [
+				{
+					"name": "Retrieve all cards",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/account/{{locAccountID}}/cards/STATUS",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"account",
+								"{{locAccountID}}",
+								"cards",
+								"STATUS"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Retrieve ACTIVE cards",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CAAS_HOME}}/account/{{locAccountID}}/cards/ACTIVE",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"account",
+										"{{locAccountID}}",
+										"cards",
+										"ACTIVE"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Jun 2021 23:06:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=FA59541A3CA787FD6E63DEE6E55C1965~ZV5CcQX29MHpckIjeNVcwv+JTYhr1u/vi/oFQ9D8vdQnmNxoTGJQKBu7CMEcKnVfJErcq7Vt9eji0W+jpSf4r3njMpl8WVgRjeO3OlKwPcWkvkKqKDGnI7H6Lmfd9V1Vco+qr+mVZx3/UZpyVevDg4oPEOuEaGjXx0oufEJ3oFs=; Domain=.usbank.com; Path=/; Max-Age=5604; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cards\": [\n        {\n            \"cardID\": \"932201726660\",\n            \"firstName\": \"Samson\",\n            \"lastName\": \"Thorgeld\",\n            \"expirationDate\": \"2022-05-23\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"936241140529\",\n            \"firstName\": \"Samson\",\n            \"lastName\": \"Thorgeld\",\n            \"expirationDate\": \"2022-05-23\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"934144582518\",\n            \"firstName\": \"Sam\",\n            \"lastName\": \"Tsukaba\",\n            \"expirationDate\": \"2022-06-03\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"932652043729\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-06\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"934870073190\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-07\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"930571044118\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-07\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"935329368012\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-07\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"939591680166\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-14\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"930816533261\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-14\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"930863955827\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-14\",\n            \"status\": \"ACTIVE\"\n        },\n        {\n            \"cardID\": \"934017853252\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-14\",\n            \"status\": \"ACTIVE\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Retrieve CLOSED cards",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CAAS_HOME}}/account/{{locAccountID}}/cards/CLOSED",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"account",
+										"{{locAccountID}}",
+										"cards",
+										"CLOSED"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "211"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 14:18:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "ak_bmsc=A930028B5289367BA2B1819688ED4B456011953D407E00009E88D8603D4C1136~plM4/sdTphWMfoDinhHDvacl2JmdBtOrZ8tBcGPDLy5TqSMCMY2vubmCpamaeGZ/0CyZGALaAAilNWy5mgTcbEZBz3A5Y58RsWev0YPdRsQ6kAWOVsvYnX1JBSpdqu+Z38J2uNIvpQ99cU0S4aCIXzshCFo5dTmDIHrLuXPJlCBCkji2K55rjhxD/p5/iHdDw+gNh0x2kkTHLLf0nsgQENLWhvYutBie899kYqR+HNJZM=; expires=Sun, 27 Jun 2021 16:18:06 GMT; max-age=7200; path=/; domain=.usbank.com; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sz=2BCA3CB1F7527F4EC107C118C44D8366~YAAQPZURYPe9uTh6AQAANavVTQwBJFkXyA5iaCr63WST7D1qNi3ULa7Oz37bbkk8WwqCJ1NilYcTZx343d7UQ1fDeP6ZuB4f7AEwkItBmTmbLV9rcw6roGm+5Nq3xejjq2kAhaGnHbp2W6GE6LPBR/1J+Si9lYjY09458QjoTUp00TvL0LQ0gvv6g5kTXGd8; Domain=.usbank.com; Path=/; Expires=Sun, 27 Jun 2021 18:18:06 GMT; Max-Age=14400; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_abck=93B966B231C8C0C4173E9343081BFEB1~-1~YAAQPZURYPi9uTh6AQAANavVTQYuR+2gIqNw1T/aNL4HoXjcFHo5khLqV4l5J/M0l1f2l3EQotcLWM48oxmpee5ipWmiEb2ioi09Q83B589UQ5dZDRNDpOAXNXmOpFWvWpgFlhIND4MmkzG34rG6lvhCc+6jREQs9YeyI0as5zgOXjX0UAGrFx5X0wJmh1AzrjkTk+v8S0DX3DS25i5ZlKMA5DJ0o/jb8TWlv8KiRChvM4Wq24un4j2MKpByEpcWvOcD+R5zDeoUqHRGPmfB8iZClQPoZD0x2JPVzeDSULhHjOzjBN3oGxAFpkSo167cGpUA/pfNzCMilflBj5gzjrEPeDP8c2h2G6J7OgLxKXnil0rKiCoZELBePW9fARQW2FWukWSXFA==~-1~-1~-1; Domain=.usbank.com; Path=/; Expires=Mon, 27 Jun 2022 14:18:06 GMT; Max-Age=31536000; Secure"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cards\": [\n        {\n            \"cardID\": \"936831215881\",\n            \"firstName\": \"Bill\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-02\",\n            \"status\": \"CLOSED\"\n        },\n        {\n            \"cardID\": \"934477636595\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-06\",\n            \"status\": \"CLOSED\"\n        },\n        {\n            \"cardID\": \"938658364995\",\n            \"firstName\": \"Sam\",\n            \"lastName\": \"Samuels\",\n            \"expirationDate\": \"2022-06-07\",\n            \"status\": \"CLOSED\"\n        },\n        {\n            \"cardID\": \"933156766299\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-08\",\n            \"status\": \"CLOSED\"\n        },\n        {\n            \"cardID\": \"938130321594\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Smith\",\n            \"expirationDate\": \"2022-06-08\",\n            \"status\": \"CLOSED\"\n        },\n        {\n            \"cardID\": \"938320221468\",\n            \"firstName\": \"Joe\",\n            \"lastName\": \"Sakiura\",\n            \"expirationDate\": \"2022-06-09\",\n            \"status\": \"CLOSED\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Payoff a card",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardID\": \"{{cardID}}\",\n    \"externalAccountID\": \"1234567890\",\n    \"routingNumber\": \"2100012345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/account/make-payment",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"account",
+								"make-payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Card not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cardID\": \"1234567890\",\n    \"externalAccountID\": \"1234567890\",\n    \"routingNumber\": \"2100012345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/account/make-payment",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"account",
+										"make-payment"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 14:41:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=0381B627EC62C51177E87450FF6D81E4~ZV5CcQX29MHpckIjeNVcwpEN8Ar9Cy8vcP1J+BYtIydPam1tQfAaLAZ1l0HYaF82JVFsvhduFaVaPkGORA/gfl7FD2SsBFYFbrBi5TXTsFAn19xRUUWoRblGPOihiv6NLTpqK+6Xa1EN9a6RIrnVhCRcCiwcpu5PD1RzXsVeHn8=; Domain=.usbank.com; Path=/; Max-Age=5825; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"404.2002.1000\",\n        \"message\": \"No records exist\",\n        \"details\": [\n            {\n                \"attributeName\": \"card\",\n                \"reason\": \"Value of '1234567890'\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Invalid card - ACTIVE",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cardID\": \"{{cardID}}\",\n    \"externalAccountID\": \"1234567890\",\n    \"routingNumber\": \"2100012345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/account/make-payment",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"account",
+										"make-payment"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "155"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 14:44:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=0381B627EC62C51177E87450FF6D81E4~ZV5CcQX29MHpckIjeNVcwpEN8Ar9Cy8vcP1J+BYtIydPam1tQfAaLAZ1l0HYaF82JVFsvhduFaVaPkGORA/gfl7FD2SsBFYFbrBi5TXTsFCW06K6kzdXrHl6b56NmeLEyBLNcB6uTuwodpyWux+OOnatxOE+j92UrpkY0ujx9S8=; Domain=.usbank.com; Path=/; Max-Age=5645; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"400.2002.1000\",\n        \"message\": \"Invalid card type\",\n        \"details\": [\n            {\n                \"attributeName\": \"cardID\",\n                \"reason\": \"Card '932201726660' has status of ACTIVE\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "virtual card",
+			"item": [
+				{
+					"name": "Create virtual card",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 2800,\n    \"cardInfo\": {\n        \"firstName\": \"Gene\",\n        \"lastName\": \"Ricks\",\n        \"email\": \"gene.ricks@test.com\",\n        \"phone\": \"555-222-1313\",\n        \"projectID\": \"PRJ0025\"\n    },\n    \"effectiveUntil\": \"2022-06-09\",\n    \"paymentAccountID\": \"{{locAccountID}}\",\n    \"returnCVV\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcard",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get available balance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcards/{{cardNumber}}/balance",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcards",
+								"{{cardNumber}}",
+								"balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CAAS_HOME}}/vcards/{{cardNumber}}/balance",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"vcards",
+										"{{cardNumber}}",
+										"balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "19"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 16:51:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=575A233D24EFB1F2CF8EE9702C04D9F9~ZV5CcQX29MHpckIjeNVcwnQdCsasHGBrBJbm4XCq6zSfGlcLgXh1L4jO+09a1qGwgeIyS/UwmD8jzgbWLl+Bl1QMyZuItnaa7AFol2IpAtLXWe4DWEtmiM6tShx3SUHiAdi+yM62qdniaIr7U3ukyc0BkEZOfakMpne8Ym103Fk=; Domain=.usbank.com; Path=/; Max-Age=7080; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"balance\": \"$3500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get detailed card info",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcards/{{cardID}}/details",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcards",
+								"{{cardID}}",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read security code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcards/{{cardID}}/cvv",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcards",
+								"{{cardID}}",
+								"cvv"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CAAS_HOME}}/vcards/{{cardID}}/cvv",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"vcards",
+										"{{cardID}}",
+										"cvv"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 16:49:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=575A233D24EFB1F2CF8EE9702C04D9F9~ZV5CcQX29MHpckIjeNVcwnQdCsasHGBrBJbm4XCq6zSfGlcLgXh1L4jO+09a1qGwgeIyS/UwmD8jzgbWLl+Bl1QMyZuItnaa7AFol2IpAtKMMYGZsLZBK61FQk55XKgwQ0BM0Kb3/szMtA+toxzfI43i1INZSbn3sERG/laYhm4=; Domain=.usbank.com; Path=/; Max-Age=7200; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cvv\": \"729\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel virtual card",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcards/{{cancelCardID}}/cancel",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcards",
+								"{{cancelCardID}}",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close virtual card",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/vcards/{{closeCardID}}/close",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"vcards",
+								"{{closeCardID}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "digital wallet",
+			"item": [
+				{
+					"name": "Determine eligibility",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/eligibility",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"cards",
+								"{{cardID}}",
+								"digital-wallet",
+								"eligibility"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Is eligible",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/eligibility",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"cards",
+										"{{cardID}}",
+										"digital-wallet",
+										"eligibility"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "19"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 14:48:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=0381B627EC62C51177E87450FF6D81E4~ZV5CcQX29MHpckIjeNVcwpEN8Ar9Cy8vcP1J+BYtIydPam1tQfAaLAZ1l0HYaF82JVFsvhduFaVaPkGORA/gfl7FD2SsBFYFbrBi5TXTsFCAGgoc+2J4WAS/gC4Ku+KpvgfMg0YSzO7V3hkY9NdHjzNq3RuMtF0lOXHZZpWRG04=; Domain=.usbank.com; Path=/; Max-Age=5408; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isEligible\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Package for Apple Pay",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceID\": \"{{deviceID}}\",\n    \"walletID\": \"{{walletID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/apple-pay",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"cards",
+								"{{cardID}}",
+								"digital-wallet",
+								"apple-pay"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceID\": \"{{deviceID}}\",\n    \"walletID\": \"{{walletID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/apple-pay",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"cards",
+										"{{cardID}}",
+										"digital-wallet",
+										"apple-pay"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 14:59:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=0381B627EC62C51177E87450FF6D81E4~ZV5CcQX29MHpckIjeNVcwpEN8Ar9Cy8vcP1J+BYtIydPam1tQfAaLAZ1l0HYaF82JVFsvhduFaVaPkGORA/gfl7FD2SsBFYFbrBi5TXTsFC795zGRoGXKcDE6SQjsPFnLWlhJBxxg7UyX7Uc5ZtFtfYRIMMS4z2B0zeK/guCd64=; Domain=.usbank.com; Path=/; Max-Age=4752; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encryptedData\": \"U2FsdGVkX1+OXmYbcul7AO4RIHV/lnKfH3G/6H5C+sXCawGf7C8vAPaIXOhrISM4M3z78GugN7lHAaKc2O0FOMkWqovw1YlABijSJhSewf5yi3aM4QYzcVFO7K2+kU7fyW4AZiARhaT9eBLDJzPvJA==\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Package for Google Pay",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceID\": \"{{deviceID}}\",\n    \"walletID\": \"{{walletID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/google-pay",
+							"host": [
+								"{{CAAS_HOME}}"
+							],
+							"path": [
+								"cards",
+								"{{cardID}}",
+								"digital-wallet",
+								"google-pay"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deviceID\": \"{{deviceID}}\",\n    \"walletID\": \"{{walletID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CAAS_HOME}}/cards/{{cardID}}/digital-wallet/google-pay",
+									"host": [
+										"{{CAAS_HOME}}"
+									],
+									"path": [
+										"cards",
+										"{{cardID}}",
+										"digital-wallet",
+										"google-pay"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Jun 2021 16:15:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=0381B627EC62C51177E87450FF6D81E4~ZV5CcQX29MHpckIjeNVcwpEN8Ar9Cy8vcP1J+BYtIydPam1tQfAaLAZ1l0HYaF82JVFsvhduFaVaPkGORA/gfl7FD2SsBFYFbrBi5TXTsFCY6Bq4G0/b7A0tpjfwOc3hE3sN38CySDHcGXKbvwFp+j0wJOaZhz353OJ6hz+W9XE=; Domain=.usbank.com; Path=/; Max-Age=196; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encryptedData\": \"U2FsdGVkX18T/8CIbIRGxdYnvElYpUhAsw4EN31gItWQhwFLucLPs8F46k0QopRmJ+5J5Y0CnF13n+Q1W4qPg7XlNg6UWzhszZZ42W2yHbjgTYAhJtBURILN2e9f6CYC9+Dk1eK6cN2fiokPveSDfg==\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

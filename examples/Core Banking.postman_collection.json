@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "962b865e-d7ea-4aab-94cd-5e08a1229c09",
+		"name": "Core Banking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "Retrieve customer details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/customer/{{customerID}}",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"customer",
+								"{{customerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve customer accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/customer/{{customerID}}/accounts",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"customer",
+								"{{customerID}}",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "Retrieve account details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/account/{{accountID}}",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"account",
+								"{{accountID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve cards for an account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/account/{{accountID}}/cards",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"account",
+								"{{accountID}}",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve account transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/account/{{accountID}}/trans/SHORT",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"account",
+								"{{accountID}}",
+								"trans",
+								"SHORT"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "Retrieve transaction details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CORE_HOME}}/transaction/{{transactionID}}",
+							"host": [
+								"{{CORE_HOME}}"
+							],
+							"path": [
+								"transaction",
+								"{{transactionID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{API_KEY}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

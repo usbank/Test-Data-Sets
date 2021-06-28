@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "5de11976-7a98-46be-915e-35aaabac8e62",
+		"name": "Money Movement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "deposit & withdrawal",
+			"item": [
+				{
+					"name": "Make a deposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountID\": \"{{ddaAccountID}}\",\n    \"amount\": 140,\n    \"checkNumber\": \"3145\",\n    \"party\": \"Pepite Pierrafeu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/deposit",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make a withdrawal",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountID\": \"{{ddaAccountID}}\",\n    \"amount\": 95,\n    \"party\": \"Spirou Fantasio\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/withdrawal",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"withdrawal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cards",
+			"item": [
+				{
+					"name": "Make a card purchase",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardNumber\": \"{{cardNumber}}\",\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"expMonth\": \"\",\n    \"expYear\": \"\",\n    \"cvv\": \"\",\n    \"zip\": \"\",\n    \"amount\": 245.87,\n    \"merchant\": \"Nordlingen\",\n    \"mcc\": \"1771\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/card-purchase",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"card-purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reverse card purchase",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountID\": \"{{accountID}}\",\n    \"transactionID\": \"\",\n    \"reason\": \"DISPUTE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/card-reverse",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"card-reverse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make a card payment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountID\": \"{{ccdAccountID}}\",\n    \"amount\": 300,\n    \"checkNumber\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/payment",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "digital wallet",
+			"item": [
+				{
+					"name": "Make a digital wallet purchase",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"encryptedCardData\": \"\",\n    \"walletID\": \"{{walletID}}\",\n    \"amount\": 245.87,\n    \"merchant\": \"Nordlingen\",\n    \"mcc\": \"1771\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/digital-wallet",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"digital-wallet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful purchase",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"encryptedCardData\": \"U2FsdGVkX1+OXmYbcul7AO4RIHV/lnKfH3G/6H5C+sXCawGf7C8vAPaIXOhrISM4M3z78GugN7lHAaKc2O0FOMkWqovw1YlABijSJhSewf5yi3aM4QYzcVFO7K2+kU7fyW4AZiARhaT9eBLDJzPvJA==\",\n    \"walletID\": \"{{walletID}}\",\n    \"amount\": 245.87,\n    \"merchant\": \"Nordlingen\",\n    \"mcc\": \"1771\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MONEY_HOME}}/activity/digital-wallet",
+									"host": [
+										"{{MONEY_HOME}}"
+									],
+									"path": [
+										"activity",
+										"digital-wallet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Jun 2021 16:45:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "bm_sv=FD756AED2EF1A5B310DC6C1616872E7B~J4QLa3LxDY2bCfUFIiSPUb60qLX+2P2Q8ugjs1p4D2a2+PRAeqq/kqHswXaAoKJewI3Whh3iuDPW2S+cJepzmYyySCHbc+VY97iXaC44HxSn0+wAdYfx0VYNcfWWf5vLn7SeohmQYPLTxhoqbmDysWFtofVQeSG8eKD3pISHniw=; Domain=.usbank.com; Path=/; Max-Age=5921; HttpOnly"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"200.2002.1000\",\n        \"message\": \"Approved: Purchase approved for $245.87\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transfers",
+			"item": [
+				{
+					"name": "external transfer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerID\": \"{{customerID}}\",\n    \"accountID\": \"{{ddaAccountID}}\",\n    \"routingNumber\": \"\",\n    \"externalAccountID\": \"\",\n    \"amount\": 95\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/external-transfer",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"external-transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "internal transfer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerID\": \"{{customerID}}\",\n    \"fromAccountID\": \"{{ddaAccountID}}\",\n    \"toAccountID\": \"{{ccdAccountID}}\",\n    \"amount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/funds-transfer",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"funds-transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "memo",
+			"item": [
+				{
+					"name": "Make a memo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountID\": \"{{accountID}}\",\n    \"memo\": \"Message String\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MONEY_HOME}}/activity/memo",
+							"host": [
+								"{{MONEY_HOME}}"
+							],
+							"path": [
+								"activity",
+								"memo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{API_KEY}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
