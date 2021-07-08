@@ -62,15 +62,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{CAAS_HOME}}/account/{{locAccountID}}/cards/ACTIVE",
+							"raw": "{{CAAS_HOME}}/company/{{companyID}}/account",
 							"host": [
 								"{{CAAS_HOME}}"
 							],
 							"path": [
-								"account",
-								"{{locAccountID}}",
-								"cards",
-								"ACTIVE"
+								"company",
+								"{{companyID}}",
+								"account"
 							]
 						}
 					},
