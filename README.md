@@ -1,4 +1,6 @@
 ## Test-Data-Sets
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fusbank%2FTest-Data-Sets.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fusbank%2FTest-Data-Sets?ref=badge_shield)
+
 
 This section will provide important technical details about the U.S. Bank APIs as well as useful tools that can be leveraged when working with these APIs.
 
@@ -40,3 +42,7 @@ More detailed information is available [here](https://github.com/usbank/Test-Dat
 The main purpose of the Reference APIs is give you access to the standard industry codes for card purchases. These methods will only be useful for you if you need to classify card purchases based on their general category (*e.g.* restaurant purchases, gas purchases, etc.)
 
 More detailed information is available [here](https://github.com/usbank/Test-Data-Sets/blob/master/Reference.md)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fusbank%2FTest-Data-Sets.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fusbank%2FTest-Data-Sets?ref=badge_large)
